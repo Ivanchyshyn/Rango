@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title %}About{% endblock %}</title>
+</head>
+<body>
+	{% block content %}
+	<h1>Rango says...</h1>
+	<div>
+		hey there partner! <br />
+		<strong>{{ boldmessage }}</strong><br />
+	</div>
+	<div>
+	<a href="/rango/">Main</a><br />
+	<img src="{{ MEDIA_URL }}rango.jpg">
+	</div>
+	{% endblock %}
+</body>
+</html>
