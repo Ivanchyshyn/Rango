@@ -17,7 +17,12 @@
 	<a href="/rango/about/">About</a><br />
   <img src="{% static 'images/rango.jpg' %}" alt="Picture of Rango" style="width: 100%">
 	</div>
-
+	<h2>Categories</h2>
+	<ul>
+		{% for category in object_list %}
+		<li>{{ category.name }}</li>
+		{% endfor %}
+	</ul>
 	{% endblock %}
 </body>
 </html>

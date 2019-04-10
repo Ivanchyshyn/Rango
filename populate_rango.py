@@ -7,7 +7,7 @@ import django
 django.setup()
 
 import logging
-logging.basicConfig(filename='populate.log', format='%(asctime)s - %(message)s',
+logging.basicConfig(filename='populate.log', filemode='w', format='%(asctime)s - %(message)s',
                     datefmt="%d-%b-%y %H:%M:%S", level=logging.INFO)
 
 from rango.models import Category, Page
