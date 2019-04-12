@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+
+<html>
+<head>
+	<title>{% block title %}Categories{% endblock %}</title>
+</head>
+<body>
+	{% block content %}
+	<div>
+	{% if categories %}
+	<ul>
+		{% for category in categories %}
+		<li><a href="{% url 'rango:category_detail' category.slug %}">{{ category.name }}</a></li>
+		{% endfor %}
+	</ul>
+	{% else %}
+		<strong>There are no categories present.</strong>
+	{% endif %}
+	</div>
+	{% endblock %}
+</body>
+</html>
