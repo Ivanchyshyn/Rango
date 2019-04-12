@@ -8,6 +8,14 @@
 </head>
 <body>
 	{% block content %}
+	<div>
+		<div style="display: inline-block;">
+			<a href="{% url 'rango:add_category' %}">Add Category</a>
+		</div>
+		<div style="display: inline-block;">
+			<a href="{% url 'rango:about' %}">About Rango</a>
+		</div>
+	</div>
 	<h1>Rango says...</h1>
 	<div>
 		hey there partner! <br />

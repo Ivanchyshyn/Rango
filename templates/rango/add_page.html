@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+
+<html>
+<head>
+	<title>{% block title %}Add page {{ view.slug }}{% endblock %}</title>
+</head>
+<body>
+	{% block content %}
+	<div>
+	<form method="POST"> {% csrf_token %}
+	{{ form.as_p }}
+	<input type="submit" value="Save" />
+	</form>
+	</div>
+	{% endblock %}
+</body>
+</html>

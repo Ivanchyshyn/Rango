@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from django.utils.text import slugify
 
 class Category(models.Model):
@@ -17,6 +18,9 @@ class Category(models.Model):
         self.slug = slugify(self.name)
         super(Category, self).save(*args, **kwargs)
 
+    def get_absolute_url(self):
+        return reverse('rango:category_detail', kwargs={'slug': self.slug})
+
 
 class Page(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
@@ -26,3 +30,6 @@ class Page(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('rango:category_detail', kwargs={'slug': slugify(self.category)})

@@ -21,7 +21,12 @@
 	{% endif %}
 	</div>
 	<div>
+	<p>
+		<a href="{% url 'rango:add_page' category.slug %}">Add a new page</a>
+	</p>
+	<p>
 		<a href="{% url 'rango:index' %}">Back to home page.</a>
+	</p>
 	</div>
 	{% endblock %}
 </body>
